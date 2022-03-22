@@ -14,9 +14,8 @@ class TweetsTest < ApplicationSystemTestCase
     visit tweets_url
     click_on "New tweet"
 
-    fill_in "King", with: @tweet.King
-    fill_in "Message", with: @tweet.Message
-    fill_in "User", with: @tweet.User_id
+    fill_in "Message", with: @tweet.message
+    fill_in "User", with: @tweet.user_id
     click_on "Create Tweet"
 
     assert_text "Tweet was successfully created"
@@ -27,9 +26,8 @@ class TweetsTest < ApplicationSystemTestCase
     visit tweet_url(@tweet)
     click_on "Edit this tweet", match: :first
 
-    fill_in "King", with: @tweet.King
-    fill_in "Message", with: @tweet.Message
-    fill_in "User", with: @tweet.User_id
+    fill_in "Message", with: @tweet.message
+    fill_in "User", with: @tweet.user_id
     click_on "Update Tweet"
 
     assert_text "Tweet was successfully updated"

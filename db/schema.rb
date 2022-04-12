@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_082455) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_12_085937) do
   create_table "hashtags", force: :cascade do |t|
     t.string "name"
     t.integer "references_count"
@@ -18,4 +18,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_082455) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hashtags_posts", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "hashtag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag_id"], name: "index_hashtags_posts_on_hashtag_id"
+    t.index ["post_id"], name: "index_hashtags_posts_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "text"
+    t.integer "retweet_count"
+    t.string "retweet_id"
+    t.integer "like_counter"
+    t.integer "reply_at"
+    t.string "out_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "hashtags_posts", "hashtags"
+  add_foreign_key "hashtags_posts", "posts"
 end

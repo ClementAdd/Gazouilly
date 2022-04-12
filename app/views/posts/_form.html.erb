@@ -1,0 +1,47 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div>
+    <%= form.label :retweet_count, style: "display: block" %>
+    <%= form.number_field :retweet_count %>
+  </div>
+
+  <div>
+    <%= form.label :retweet_id, style: "display: block" %>
+    <%= form.text_field :retweet_id %>
+  </div>
+
+  <div>
+    <%= form.label :like_counter, style: "display: block" %>
+    <%= form.number_field :like_counter %>
+  </div>
+
+  <div>
+    <%= form.label :reply_at, style: "display: block" %>
+    <%= form.number_field :reply_at %>
+  </div>
+
+  <div>
+    <%= form.label :out_url, style: "display: block" %>
+    <%= form.text_field :out_url %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_085937) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
   create_table "hashtags", force: :cascade do |t|
     t.string "name"
     t.integer "references_count"
@@ -27,6 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_085937) do
     t.index ["post_id"], name: "index_hashtags_posts_on_post_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "country"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "text"
     t.integer "retweet_count"
@@ -34,6 +41,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_085937) do
     t.integer "like_counter"
     t.integer "reply_at"
     t.string "out_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "user_name"
+    t.string "description"
+    t.string "avatar_url"
+    t.boolean "certified"
+    t.string "city"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :tweets
+  resources :hashtags
   root to: 'tweets#index'
 end

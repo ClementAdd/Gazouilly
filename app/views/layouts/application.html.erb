@@ -6,11 +6,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.js" defer></script>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+
   </head>
 
   <body>
+
+  <nav class="navbar shadow-1 primary">
+    <a href="#" class="navbar-brand">Gazouilly</a>
+    <div class="navbar-menu ml-auto">
+      <a class="navbar-link active" href="#">Link</a>
+      <a class="navbar-link" href="#">Link</a>
+      <a class="navbar-link" href="#">Link</a>
+    </div>
+  </nav>
+
     <%= yield %>
   </body>
 </html>

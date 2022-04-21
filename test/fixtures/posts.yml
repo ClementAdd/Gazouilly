@@ -2,16 +2,16 @@
 
 one:
   text: MyString
-  retweet_count: 1
-  retweet_id: MyString
+  repost_count: 1
+  repost_id: MyString
   like_counter: 1
   reply_at: 1
   out_url: MyString
 
 two:
   text: MyString
-  retweet_count: 1
-  retweet_id: MyString
+  repost_count: 1
+  repost_id: MyString
   like_counter: 1
   reply_at: 1
   out_url: MyString

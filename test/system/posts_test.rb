@@ -17,8 +17,8 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Like counter", with: @post.like_counter
     fill_in "Out url", with: @post.out_url
     fill_in "Reply at", with: @post.reply_at
-    fill_in "Retweet count", with: @post.retweet_count
-    fill_in "Retweet", with: @post.retweet_id
+    fill_in "Repost count", with: @post.repost_count
+    fill_in "Repost", with: @post.repost_id
     fill_in "Text", with: @post.text
     click_on "Create Post"
 
@@ -33,8 +33,8 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Like counter", with: @post.like_counter
     fill_in "Out url", with: @post.out_url
     fill_in "Reply at", with: @post.reply_at
-    fill_in "Retweet count", with: @post.retweet_count
-    fill_in "Retweet", with: @post.retweet_id
+    fill_in "Repost count", with: @post.repost_count
+    fill_in "Repost", with: @post.repost_id
     fill_in "Text", with: @post.text
     click_on "Update Post"
 

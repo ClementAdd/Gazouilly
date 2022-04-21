@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
 
   create_table "posts", force: :cascade do |t|
     t.string "text"
-    t.integer "retweet_count"
-    t.string "retweet_id"
+    t.integer "repost_count"
+    t.string "repost_id"
     t.integer "like_counter"
     t.integer "reply_at"
     t.string "out_url"
@@ -38,13 +38,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tweets", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.text "Message"
     t.string "King"
     t.integer "User_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["User_id"], name: "index_tweets_on_User_id"
+    t.index ["User_id"], name: "index_posts_on_User_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,5 +62,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
 
   add_foreign_key "hashtags_posts", "hashtags"
   add_foreign_key "hashtags_posts", "posts"
-  add_foreign_key "tweets", "Users"
+  add_foreign_key "posts", "Users"
 end

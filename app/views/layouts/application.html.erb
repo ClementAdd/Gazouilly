@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Gazouilly</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>Gazouilly</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.js" defer></script>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 
 
-  </head>
+</head>
 
-  <body>
-
+<body class="layout">
+<header>
   <%= render template: "layouts/navbar" %>
+</header>
 
+<main>
+  <%= yield %>
+</main>
 
+<footer class="footer primary">
+  Copyright © 2022 - Example
+</footer>
 
-    <%= yield %>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.js"></script>
+</body>
 </html>

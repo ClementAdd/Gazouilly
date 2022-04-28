@@ -1,7 +1,7 @@
 # Gazouilly Ruby on Rails
 <img align="right" height="100" src="https://brand.ynov.com/img/logos/projet_etudiant/ynov/prj_ynov.svg" alt="logo projet">
 
-##Clément Addario, Thomas Delbende, Romain Huc, Lakhdar Tifour.
+## Clément Addario, Thomas Delbende, Romain Huc, Lakhdar Tifour.
 ## B2 Info - Toulouse Ynov Campus
 
 

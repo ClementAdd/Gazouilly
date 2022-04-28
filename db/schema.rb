@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_28_081935) do
   create_table "hashtags", force: :cascade do |t|
     t.string "name"
     t.integer "references_count"
@@ -38,6 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tweets", force: :cascade do |t|
+    t.text "Message"
+    t.string "King"
+    t.integer "User_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["User_id"], name: "index_tweets_on_User_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -49,8 +58,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_091930) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "hashtags_posts", "hashtags"
   add_foreign_key "hashtags_posts", "posts"
+  add_foreign_key "tweets", "Users"
 end

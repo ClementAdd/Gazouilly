@@ -3,7 +3,8 @@
     <% @posts.each do |post| %>
       <div class="card shadow-2 rounded-2 white">
         <div class="card-header">
-          <a href="/users/<%= 1 %>"><%= post.get_author_name 1 %></a>
+          <%= link_to "Author", user_path(1) %>
+          <!--<a href="/users/<%#= 1 %>"><%#= post.get_author_name 1 %></a>-->
         </div>
         <div class="card-content">
           <blockquote><%= post.text %></blockquote>
@@ -17,6 +18,8 @@
   </div>
 </div>
 
-<div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">
-  <%= link_to "New post", new_post_path %>
-</div>
+<% if current_user != nil %>
+  <div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">
+    <%= link_to "New post", new_post_path %>
+  </div>
+<% end %>

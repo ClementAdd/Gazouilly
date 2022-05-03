@@ -11,4 +11,8 @@ class Post < ApplicationRecord
   def repost_id
     # code here
   end
+
+  def get_author_name(author_id)
+    User.find(id = author_id).user_name
+  end
 end

@@ -1,14 +1,14 @@
 <nav class="navbar shadow-1 blue dark-3">
-    <a href='/' class="navbar-brand">
-      <img src='https://i.postimg.cc/f3KkZSjm/Twitter-Bird.png' alt='Twitter-Bird' style="width: 50px; padding-top: 20px"/>
-    </a>
+  <a href='/' class="navbar-brand">
+    <img src='https://i.postimg.cc/f3KkZSjm/Twitter-Bird.png' alt='Twitter-Bird' style="width: 50px; padding-top: 20px"/>
+  </a>
 
-  <div class="navbar-menu ml-auto" style="padding-top: 15px">
-    <a target="_blank" href="https://github.com/ClementAdd/Gazouilly" style="padding-top: 10px">
-      <img src="https://pngimg.com/uploads/github/github_PNG83.png" alt="github logo" style="height: 40px;
-        padding-right: 50px">
-    </a>
-    <a  class="navbar-link" href="/users/sign_in">Sign in</a>
-    <a class="navbar-link" href="/users/sign_up">Register</a>
+  <div class="navbar-menu ml-auto">
+    <% if current_user == nil %>
+      <a class="navbar-link" href="/users/sign_in">Sign in</a>
+      <a class="navbar-link" href="/users/sign_up">Register</a>
+    <% else %>
+      <a class="navbar-link" href="/users/<%= current_user.id %>">Profile</a>
+    <% end %>
   </div>
 </nav>

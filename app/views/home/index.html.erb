@@ -1,21 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
 <div class="container">
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="card shadow-2 rounded-2 white">
         <div class="card-header">
-          <a href="#"><%= "[AUTHOR]" %></a>
+          <a href="/users/<%= 1 %>"><%= post.get_author_name 1 %></a>
         </div>
         <div class="card-content">
           <blockquote><%= post.text %></blockquote>
         </div>
         <div class="divider"></div>
-        <div class="card-footer">Created at <i><%= post.created_at %></i></div>
+        <div class="card-footer">Created at <i><%= post.created_at %></i>
+          <% if post.updated_at != post.created_at %> | Updated at <i><%= post.updated_at %></i>
+          <% end %></div>
       </div>
     <% end %>
   </div>
-  <div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">
-    <%= link_to "New post", new_post_path %>
-  </div>
+</div>
+
+<div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">
+  <%= link_to "New post", new_post_path %>
 </div>

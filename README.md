@@ -15,7 +15,7 @@ Comment faire fonctionner Gazouilly ?
 Veuillez vérifier que Ruby est bien installé sur votre ordinateur via la commande `ruby -v` 
 et que le gem rails est bien installé via la commande `rails -v`.
 
-Ensuite, place à l'installation de Gazouilly.
+**Ensuite, place à l'installation de Gazouilly.**
 
 1. Clone le repository sur votre machine.
 2. Faites la commande `bundle install` pour installer les dépendances.
@@ -23,6 +23,10 @@ Ensuite, place à l'installation de Gazouilly.
 4. Vous pouvez accéder à Gazouilly via le lien suivant : `http://localhost:3000`.
 5. Vous pouvez ainsi vous connecter, et utiliser notre site web.
 
+
+Vous pouvez utiliser maildev pour tester votre site web.
+Pour cela, rien de plus simple, installez le via la commande : `npm install -g maildev`.
+Ensuite faite la commande `maildev` pour lancer le serveur accesible sur `localhost:1080`.
 
 
 

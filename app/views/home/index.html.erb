@@ -1,10 +1,12 @@
+<%= stylesheet_link_tag "index" %>
+
 <div class="container">
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="card shadow-2 rounded-2 white">
         <div class="card-header">
           <%= link_to "Author", user_path(1) %>
-          <!--<a href="/users/<%#= 1 %>"><%#= post.get_author_name 1 %></a>-->
+          <a href="/users/<%= 1 %>"><%= post.get_author_name 1 %></a>
         </div>
         <div class="card-content">
           <blockquote><%= post.text %></blockquote>

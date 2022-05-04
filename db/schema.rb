@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_081935) do
 
   create_table "posts", force: :cascade do |t|
     t.string "text"
+    t.integer "user_id", null: false
     t.integer "repost_count"
     t.string "repost_id"
     t.integer "like_counter"

@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   has_and_belongs_to_many :hashtags
   accepts_nested_attributes_for :hashtags
 
+  belongs_to :user, optional: false
+
   def repost_count
     # code here
   end
@@ -10,7 +12,7 @@ class Post < ApplicationRecord
     # code here
   end
 
-  def get_author_name(author_id)
-    # User.find(id = author_id).user_name
+  def get_author_name
+    User.find(id = user_id).user_name
   end
 end

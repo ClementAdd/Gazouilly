@@ -2,9 +2,17 @@
 
 <%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+<div class="btn-group rounded-3" >
+  <button class="btn airforce dark-2">
+    <%= link_to "Edit this user", edit_user_path(@user) %>
+  </button>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <button class="btn airforce dark-2">
+    <%= link_to "Back to users", users_path %>
+
+  </button>
+
+  <button class="btn airforce dark-2">
+  <%= link_to "Destroy this user", @user, method: :delete %>
+  </button>
 </div>

@@ -11,47 +11,58 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+  <div class="grix xs3">
+    <div></div>
+    <div class="card shadow-1 rounded-3 blue" style="width: 150%">
+      <div class="grix xs2 center">
+
+        <div>
+          <%= form.label :last_name, style: "display: block" %>
+          <%= form.text_field :last_name %>
+        </div>
+
+        <div>
+          <%= form.label :first_name, style: "display: block" %>
+          <%= form.text_field :first_name %>
+        </div>
+
+        <div>
+          <%= form.label :user_name, style: "display: block" %>
+          <%= form.text_field :user_name %>
+        </div>
+
+        <div>
+          <%= form.label :description, style: "display: block" %>
+          <%= form.text_field :description %>
+        </div>
+
+        <div>
+          <%= form.label :avatar_url, style: "display: block" %>
+          <%= form.text_field :avatar_url %>
+        </div>
+
+        <div>
+          <%= form.label :certified, style: "display: block" %>
+          <%= form.check_box :certified %>
+        </div>
+
+        <div>
+          <%= form.label :city, style: "display: block" %>
+          <%= form.text_field :city %>
+        </div>
+
+        <div>
+          <%= form.label :country, style: "display: block" %>
+          <%= form.text_field :country %>
+        </div>
+
+        <div>
+          <%= form.submit %>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :user_name, style: "display: block" %>
-    <%= form.text_field :user_name %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.label :avatar_url, style: "display: block" %>
-    <%= form.text_field :avatar_url %>
-  </div>
-
-  <div>
-    <%= form.label :certified, style: "display: block" %>
-    <%= form.check_box :certified %>
-  </div>
-
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

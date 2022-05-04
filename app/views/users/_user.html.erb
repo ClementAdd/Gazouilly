@@ -1,42 +1,37 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
+
+<%= stylesheet_link_tag "users", "data-turbo-track": "reload" %>
+
+
+<div class="grix xs3">
+<div> </div>
+<div class="card shadow-1 white rounded-3 " id="<%= dom_id user %>">
+
+  <div class="grix xs2 center" style="position: relative">
+    <p class="h4 self-center">
+      <%= user.user_name %>
+
+    </p>
+
+    <img src="<%= user.avatar_url %>" class="user-avatar self-center" alt="user avatar"></img>
+    <%if user.certified%>
+      <span class="badge badge-success center">🌟</span>
+    <%end%>
+  </div>
+
+
 
   <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>User name:</strong>
-    <%= user.user_name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
+    <strong>Que pense <%=user.first_name%> <%= user.last_name %>? : </strong>
     <%= user.description %>
   </p>
 
-  <p>
-    <strong>Avatar url:</strong>
-    <%= user.avatar_url %>
-  </p>
 
   <p>
-    <strong>Certified:</strong>
-    <%= user.certified %>
+    <strong>Où vit l'humain ? 📍</strong>
+    <%= user.city %>, <%= user.country %>
   </p>
 
-  <p>
-    <strong>City:</strong>
-    <%= user.city %>
-  </p>
 
-  <p>
-    <strong>Country:</strong>
-    <%= user.country %>
-  </p>
-
+</div>
 </div>

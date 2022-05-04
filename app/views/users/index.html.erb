@@ -2,13 +2,27 @@
 
 <h1>Users</h1>
 
+
+
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+
+    <div class="button" style="text-align: center;">
+      <button class="btn blue rounded-3">
+        <%= link_to "Show this user", user %>
+      </button>
+    </div>
+
   <% end %>
 </div>
 
-<%= link_to "New user", new_user_path %>
+<div class="button" style="text-align: center; margin-top: 20px">
+
+  <button class="btn shadow-1 rounded-3 btn-outline text-blue">
+    <p class="btn-outline-text">    <%= link_to "New user", new_user_path %>
+    </p>
+
+  </button>
+</div>
+

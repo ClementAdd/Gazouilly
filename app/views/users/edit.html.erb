@@ -1,11 +1,11 @@
-<h1>Editing user</h1>
+<div class="h1" style="text-align: center">Editing user</div>
 
 <%= render "form", user: @user %>
 
 <br>
 
-<div class="button">
-  <button><%= link_to "Show this user", @user %> </button>
+<div class="button center" style="text-align: center">
+  <button class="btn blue rounded-3"><%= link_to "Show this user", @user %> </button>
 
-  <%= link_to "Back to users", users_path %>
+  <button class="btn blue rounded-3"><%= link_to "Back to users", users_path %></button>
 </div>

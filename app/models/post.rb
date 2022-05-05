@@ -15,4 +15,8 @@ class Post < ApplicationRecord
   def get_author_name
     User.find(id = user_id).user_name
   end
+
+  def get_author_picture
+    User.find(id = user_id).avatar_url
+  end
 end

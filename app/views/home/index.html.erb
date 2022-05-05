@@ -1,8 +1,17 @@
 <%= stylesheet_link_tag "index" %>
 
-<div class="principal">
+<div class="principal grix xs4">
+  <div class="" id="side-bar" style="background: #BCDFFB" >
+    <div class="grix " id="links-list" style="flex-direction: column">
+      <a class="navbar-link active btn shadow-1 rounded-1 blue" href="/">accueil</a>
+      <a class="navbar-link btn shadow-1 rounded-1 blue" href="/users/">Profile</a>
+      <% if current_user != nil %>
+        <a class="navbar-link btn shadow-1 rounded-1 blue" href="/posts/new">New Post</a>
+      <% end %>
+    </div>
 
-  <div id="posts">
+  </div>
+  <div class="" id="posts">
     <% @posts.each do |post| %>
       <div class="card shadow-2 rounded-2 white">
         <div class="card-header" style="text-align: start">
@@ -23,8 +32,8 @@
 
 </div>
 
-<% if current_user != nil %>
-  <div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">
-    <%= link_to "New post", new_post_path %>
-  </div>
-<% end %>
+<%# if current_user != nil %>
+<!--  <div class="floating-new-post blue dark-1 rounded-4 hover-text-dark cursor-pointer">-->
+    <%#= link_to "New post", new_post_path %>
+<!--  </div>-->
+<%# end %>

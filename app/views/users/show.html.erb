@@ -1,18 +1,32 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @user %>
 
-<div class="btn-group rounded-3">
-  <button class="btn airforce dark-2">
-    <%= link_to "Edit this user", edit_user_path(@user) %>
-  </button>
+<div style="display: flex; justify-content: center; flex-flow: column; width: 50%; margin-left: 50%; transform: translateX(-25.5%);">
+    <div class="btn-group rounded-3">
+      <button class="btn airforce dark-2">
+        <%= link_to "Edit this user", edit_user_path(@user) %>
+      </button>
 
-  <button class="btn airforce dark-2">
-    <%= link_to "Back to users", users_path %>
+      <button class="btn airforce dark-2">
+        <%= link_to "Back to users", users_path %>
 
-  </button>
+      </button>
 
-  <button class="btn airforce dark-2">
-  <%= link_to "Destroy this user", @user, method: :delete %>
-  </button>
+      <button class="btn airforce dark-2">
+        <%= link_to "Destroy this user", @user, method: :delete %>
+      </button>
+    </div>
+
+    <div>
+      <% @posts.each do |post| %>
+        <div class="card shadow-2 rounded-2 white">
+          <div class="card-content">
+            <blockquote><%= post.text %></blockquote>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">Created at <i><%= post.created_at %></i>
+            <% if post.updated_at != post.created_at %> | Updated at <i><%= post.updated_at %></i>
+            <% end %></div>
+        </div>
+      <% end %>
+    </div>
 </div>

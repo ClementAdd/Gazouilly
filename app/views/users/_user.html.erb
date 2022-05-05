@@ -1,36 +1,36 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
-
 <%= stylesheet_link_tag "users", "data-turbo-track": "reload" %>
 
 
 <div class="grix xs3">
   <div></div>
-  <div class="card shadow-1 white rounded-3 " id="<%= dom_id user %>">
+  <div style="display: flex; justify-content: center">
+    <div class="card shadow-1 white rounded-3" style="width: 75%" id="<%= dom_id user %>">
 
-    <div class="grix xs2 center" style="position: relative">
-      <p class="h4 self-center">
-        <%= user.user_name %>
+      <div class="grix xs2 center" style="position: relative">
+        <p class="h4 self-center">
+          <%= user.user_name %>
 
+        </p>
+
+        <img src="<%= user.avatar_url %>" class="user-avatar self-center" alt="user avatar"></img>
+        <% if user.certified %>
+          <span class="badge badge-success center">🌟</span>
+        <% end %>
+      </div>
+
+
+      <p>
+        <strong>Que pense <%= user.first_name %> <%= user.last_name %>? : </strong>
+        <%= user.description %>
       </p>
 
-      <img src="<%= user.avatar_url %>" class="user-avatar self-center" alt="user avatar"></img>
-      <% if user.certified %>
-        <span class="badge badge-success center">🌟</span>
-      <% end %>
+
+      <p>
+        <strong>Où vit l'humain ? 📍</strong>
+        <%= user.city %>, <%= user.country %>
+      </p>
+
+
     </div>
-
-
-    <p>
-      <strong>Que pense <%= user.first_name %> <%= user.last_name %>? : </strong>
-      <%= user.description %>
-    </p>
-
-
-    <p>
-      <strong>Où vit l'humain ? 📍</strong>
-      <%= user.city %>, <%= user.country %>
-    </p>
-
-
   </div>
 </div>

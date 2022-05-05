@@ -12,9 +12,9 @@
 
         </p>
 
-        <img src="<%= user.avatar_url %>" class="user-avatar self-center" alt="user avatar"></img>
+        <img src="<%= user.avatar_url %>" class="user-avatar self-center" alt="user avatar">
         <% if user.certified %>
-          <span class="badge badge-success center">🌟</span>
+          <span class="badge badge-success center" title="Certified" style="cursor: default">🌟</span>
         <% end %>
       </div>
 
